@@ -14,6 +14,8 @@ var test = {
 		},
 		body: {
 			h1_id_header: 'Hello World',
+			img_id_logo_src:"logo.jpg",
+			h_href:["home.html",home],
 			ul_class_menu: [{
 					li: 'link1'
 				},
@@ -42,6 +44,8 @@ result ="name.html"
 	<h1 id="header">
 		Hello world
 	</h1>
+	<img id='logo' src="logo.jpg">
+	<a href="home.html">home</a>
 	<ul class="menu">
 		<li>link1</li>
 		<li>link2</li>
