@@ -28,10 +28,12 @@ var test = {
 }
 
 </pre>
+<pre>
+var jth = require('jsontohtml');
+=> jth.jsonToHTML(test,"name");
+</pre>
 
-=> jsonToHTML(test,"name.html");
-
-result
+result ="name.html"
 <html>
 	<head>
 		<title>test</title>
