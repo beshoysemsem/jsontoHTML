@@ -24,6 +24,7 @@ var jth = {
 	},
 	getTag:function(key,value){
 	var tagArr = key.split("_");
+
 	var tag="<"+tagArr[0];
 	if (tagArr.indexOf("id")!== -1) {
 		index=tagArr.indexOf("id") + 1;
@@ -36,11 +37,15 @@ var jth = {
 
 	if (tagArr.indexOf("src")!== -1) {
 		index=tagArr.indexOf("src") + 1;
-		tag+=" src='"+tagArr[index]+"'";
+		tag+=" src='"+value+"'";
 	}
-	if (tagArr.indexOf("href")!== -1) {
+	if (tagArr.indexOf("href")!== -1 && tagArr[0]=="a") {
 		index=tagArr.indexOf("href") + 1;
-		tag+=" href='"+tagArr[index]+"'";
+		tag+=" src='"+value[0]+"'";
+	}
+	if (tagArr.indexOf("href")!== -1 && tagArr[0]!="a") {
+		index=tagArr.indexOf("href") + 1;
+		tag+=" src='"+value+"'";
 	}
 	if (tagArr.indexOf("value")!== -1) {
 		index=tagArr.indexOf("value") + 1;
@@ -58,11 +63,23 @@ var jth = {
 		index=tagArr.indexOf("onHover") + 1;
 		tag+=" onHover='"+tagArr[index]+"'";
 	}
-
+	
 
 
 	tag+=">";
+	if (tagArr[0]=="img"||tagArr[0]=="p") {
+			tag+="/>";
+			return tag;
+	}
+	if (tagArr[0]=="a") {
+			value=value[1];
+	}
 
+	if (tagArr[0]=="link"||tagArr[0]=="script")
+	{
+			tag+="</"+tagArr[0]+">";
+			return tag;	
+	}
 	var valueType=getValueType(value);
 	if (valueType=="[object String]" || valueType=="[object Number]")
 		{
@@ -86,7 +103,7 @@ var jth = {
 		}
 	}
 
-			tag+="</"+tagArr[0]+">"
+			tag+="</"+tagArr[0]+">";
 			return tag;
 }	
 
