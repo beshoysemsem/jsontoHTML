@@ -4,8 +4,7 @@ node js package to covert json object to html page
 
 Now you can convert a json object to html 
 <code>
-example:
-
+example
 var test={
 	html:{
 		head:{
@@ -17,7 +16,6 @@ var test={
 		{li:'link2 '},
 		{li:' link3'}]	}	}}
 </code>
-
 => jsonToHTML(test,"name.html");
 
 result
