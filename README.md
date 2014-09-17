@@ -3,20 +3,31 @@ jsontoHTML
 node js package to covert json object to html page 
 
 Now you can convert a json object to html 
-<textarea>
-example
-var test={
-	html:{
-		head:{
-		title:'test',	
-	},
-	body:{
-		h1_id_header:'Hello World',
-		ul_class_menu:[{li:'link1'},
-		{li:'link2 '},
-		{li:' link3'}]	}	}}
-</textarea>
 
+<h1>example</h1>
+
+<pre>
+var test = {
+	html: {
+		head: {
+			title: 'test',
+		},
+		body: {
+			h1_id_header: 'Hello World',
+			ul_class_menu: [{
+					li: 'link1'
+				},
+				{
+					li: 'link2 '
+				},
+				{
+					li: ' link3'
+				}]
+		}
+	}
+}
+
+</pre>
 
 => jsonToHTML(test,"name.html");
 
