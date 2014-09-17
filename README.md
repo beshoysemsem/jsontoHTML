@@ -3,7 +3,7 @@ jsontoHTML
 node js package to covert json object to html page 
 
 Now you can convert a json object to html 
-<code>
+<script>
 example
 var test={
 	html:{
@@ -15,7 +15,7 @@ var test={
 		ul_class_menu:[{li:'link1'},
 		{li:'link2 '},
 		{li:' link3'}]	}	}}
-</code>
+</script>
 
 
 => jsonToHTML(test,"name.html");
